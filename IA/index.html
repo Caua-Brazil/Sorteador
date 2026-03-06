@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Números</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C10.8954 2 10 2.89543 10 4V10H4C2.89543 10 2 10.8954 2 12C2 13.1046 2.89543 14 4 14H10V20C10 21.1046 10.8954 22 12 22C13.1046 22 14 21.1046 14 20V14H20C21.1046 14 22 13.1046 22 12C22 10.8954 21.1046 10 20 10H14V4C14 2.89543 13.1046 2 12 2Z" fill="#C684FF"/>
+                <circle cx="6" cy="6" r="2" fill="#C684FF"/>
+                <circle cx="18" cy="18" r="2" fill="#C684FF"/>
+            </svg>
+            <span>NUMBERS</span>
+        </header>
+
+        <main class="main-content">
+            <section class="left-panel">
+                <span class="badge">ONLINE - GRATUITO</span>
+                <h1 class="title">SORTEADOR<br>DE NÚMEROS</h1>
+
+                <div class="faq">
+                    <div class="faq-item">
+                        <div class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C684FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </div>
+                        <div class="faq-text">
+                            <h3>Como funciona o sorteador de números?</h3>
+                            <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C684FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </div>
+                        <div class="faq-text">
+                            <h3>Posso escolher o intervalo dos números?</h3>
+                            <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-panel">
+                
+                <div id="form-card" class="card">
+                    <h2>QUERO SORTEAR:</h2>
+                    <p class="desc">defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label>NÚMEROS</label>
+                            <input type="number" id="qtd" value="2" min="1">
+                        </div>
+                        <div class="input-box">
+                            <label>DE</label>
+                            <input type="number" id="min" value="1" min="0">
+                        </div>
+                        <div class="input-box">
+                            <label>ATÉ</label>
+                            <input type="number" id="max" value="100" min="1">
+                        </div>
+                    </div>
+
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" id="no-repeat" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="toggle-label">Não repetir número</span>
+                    </div>
+
+                    <button class="btn-action" id="btn-sortear">
+                        SORTEAR 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+
+                <div id="result-card" class="card" style="display: none;">
+                    <h2 class="result-title">RESULTADO DO SORTEIO</h2>
+                    <p class="result-subtitle" id="sorteio-num">1º RESULTADO</p>
+
+                    <div class="drawn-numbers" id="drawn-numbers">
+                        </div>
+
+                    <button class="btn-action" id="btn-sortear-novamente">
+                        SORTEAR NOVAMENTE 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                    </button>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+/* Reset e Layout Básico (Mantido igual) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0B0B0C;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 60px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Coluna da Esquerda (Mantida igual) */
+.badge {
+    color: #9FA3A9;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 60px;
+}
+
+.faq-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.faq-icon {
+    margin-top: 2px;
+}
+
+.faq-text h3 {
+    color: #C684FF;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.faq-text p {
+    color: #9FA3A9;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* --- Cartões (Formulário e Resultado) --- */
+.card {
+    width: 100%;
+    max-width: 450px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card .desc {
+    color: #9FA3A9;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+/* Inputs do Formulário */
+.input-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100px; 
+}
+
+.input-box label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.input-box input {
+    background-color: #1A1A1E;
+    border: none;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 8px;
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.input-box input:focus {
+    background-color: #25252A;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Toggle Switch */
+.toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3f3f46;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: linear-gradient(to right, #D586E0 0%, #91A1FA 100%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    color: #E4E4E7;
+}
+
+/* Botões Padrão (Serve para Sortear e Sortear Novamente) */
+.btn-action {
+    background-color: #2B2B36;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #3f3f4e;
+}
+
+/* --- TELA DE RESULTADO ESPECÍFICA --- */
+#result-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.result-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 8px !important;
+}
+
+.result-subtitle {
+    color: #9FA3A9;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.drawn-numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #C684FF;
+    margin-bottom: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-box {
+        width: 100%;
+    }
+}
+
+/* ========================================= */
+/* --- ANIMAÇÕES DA TELA DE RESULTADOS --- */
+/* ========================================= */
+
+#result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.drawn-numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+    min-height: 120px; /* Mantém a altura para os elementos não pularem na tela */
+}
+
+/* Caixa individual que segura o fundo animado e o número */
+.number-result {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+/* O fundo roxo que rotaciona e depois some */
+.bg-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C684FF;
+    border-radius: 24px;
+    /* Começa invisível e pequeno */
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+    /* Executa a animação 'shapeReveal' com duração de 2s */
+    animation: shapeReveal 2s forwards;
+}
+
+/* O texto numérico que muda de cor */
+.num-text {
+    position: relative;
+    font-size: 4.5rem;
+    font-weight: 700;
+    /* Começa invisível e pequeno junto com o fundo */
+    color: transparent;
+    transform: scale(0);
+    /* Executa a animação 'textReveal' sincronizada com o fundo */
+    animation: textReveal 2s forwards;
+}
+
+/* Animação do Fundo Roxo */
+@keyframes shapeReveal {
+    0%   { transform: scale(0) rotate(45deg); opacity: 0; }
+    15%  { transform: scale(1.1) rotate(45deg); opacity: 1; } /* Dá um leve pulo pra frente */
+    25%  { transform: scale(1) rotate(45deg); opacity: 1; }   /* Volta ao tamanho normal */
+    70%  { transform: scale(1) rotate(45deg); opacity: 1; }   /* Fica na tela por um tempo */
+    100% { transform: scale(1) rotate(45deg); opacity: 0; }   /* Some suavemente */
+}
+
+/* Animação do Texto (Sincronizada) */
+@keyframes textReveal {
+    0%   { transform: scale(0); color: transparent; }
+    15%  { transform: scale(1.1); color: #0B0B0C; } /* Fica da cor do fundo escuro da página */
+    25%  { transform: scale(1); color: #0B0B0C; }
+    70%  { transform: scale(1); color: #0B0B0C; }
+    100% { transform: scale(1); color: #C684FF; } /* Muda para roxo quando o fundo roxo some */
+}
+
+/* Animação de entrada do botão de Sortear Novamente */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
