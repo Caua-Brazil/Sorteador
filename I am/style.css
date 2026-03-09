@@ -1,3 +1,7 @@
+/* ========================================= */
+/* RESET E FONTES BÁSICAS */
+/* ========================================= */
+
 @import url(https://fonts.google.com/specimen/Sora?query=sora&specimen.preview.text=Whereas+recognition+of+the+inherent+dignity);
 @import url(https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mono);
 @import url(https://fonts.google.com/specimen/Roboto+Flex?query=roboto+flex);
@@ -7,12 +11,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sora', sans-serif;
-    background-color: #020202;
 }
 
 body{
     background: url(img/linha.svg);
     background-size: cover;
+    background-color: #020202;
     color: #FFFFFF; 
     min-height: 100vh;
     display: flex;
@@ -50,13 +54,14 @@ body{
 .main-content{
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 108px;
     flex-wrap: wrap;
 }
 
 .left-panel, .right-panel{
     flex: 1;
-    min-width: 320px;
+    max-width: 508px;
+    min-width: 482px;
 }
 
 /* ========================================= */
@@ -64,24 +69,30 @@ body{
 /* ========================================= */
 
 .subtitle{
-    color: linear-gradient(#C7C9CC 0%, #3D3D3D 100%);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(#C7C9CC 0%, #3D3D3D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 700;
+    /* letter-spacing: 1px; */
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 16px;
+    /* display: block; */
+    /* margin-bottom: 16px; */
 }
 
 .title {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.1;
+    font-size: 72px;
+    line-height: 130%;
+    font-weight: 800;
+    text-transform: uppercase;
     letter-spacing: -1.5px;
     margin-bottom: 60px;
 }
 
 .question-item {
+    font-family: 'Roboto Flex', sans-serif;
     display: flex;
     gap: 16px;
     margin-bottom: 32px;
@@ -91,16 +102,344 @@ body{
     margin-top: 2px;
 }
 
+.question-icon img {
+    width: 24px;
+    height: 24px;
+    /* Este filtro converte branco para o roxo #C58DE7 */
+    filter: invert(75%) sepia(45%) saturate(450%) hue-rotate(225deg) brightness(230%) contrast(95%);
+    opacity: 0.9;
+}
+
 .question-text h3 {
-    color: #C684FF;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
+    color: #C58DE7;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 500;
+    text-transform: default;
+    /* margin-bottom: 8px; */
 }
 
 .question-text p {
+    color: #C7C9CC;
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 500;
+    text-transform: default;
+    max-width: 358px;
+}
+
+/* ========================================= */
+/* PAINEL DIREITO (FORMULÁRIO) */
+/* ========================================= */
+
+.container-form h2 {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: default;
+    margin-bottom: 12px;
+}
+
+.container-form p {
+    color: #C7C9CC;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 500;
+    text-transform: default;
+    margin-bottom: 40px;
+    max-width: 482px;
+}
+
+.input-ground {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    max-width: 120px;
+}
+
+.input-box label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    color: #C7C9CC;
+}
+
+.input-box input {
+    background-color: #111012;
+    border: none;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 8px;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+.input-box input:focus {
+    background-color: #25252A;
+}
+
+/* Ocultar setas padrão dos inputs numéricos */
+.inout-box input[type=number]::-webkit-inner-spin-button,
+.input-box input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-box input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ========================================= */
+/* SWITCH (NÃO REPETIR NÚMERO) E ANIMAÇÃO */
+/* ========================================= */
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3f3f46;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}  
+
+input:checked + .slider {
+    background: linear-gradient(to right, #D586E0 0%, #91A1FA 98.93%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.option-text {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #E4E4E7;
+}
+
+/* ========================================= */
+/* BOTÃO DE SORTEAR (HOVER) */
+/* ========================================= */
+.button-sortear {
+    background-color: #24222E;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    max-width: 482px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button-sortear img,
+.button-sortear svg {
+    background: transparent;
+}
+
+.button-sortear:hover {
+    background-color: #3A3A45;
+    transform: translateY(-2px);
+}
+
+.button-sortear:active {
+    transform: scale(0.98);
+}
+
+/* ========================================= */
+/* RESPONSIVIDADE (CELULARES) */
+/* ========================================= */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .input-ground {
+        flex-direction: column;
+    }
+
+    .input-box {
+        max-width: 100%;
+    }
+}
+
+
+
+/* ========================================= */
+/* TELA DE RESULTADOS E ANIMAÇÃO */
+/* ========================================= */
+
+.container-result {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.result-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.result-subtitle {
     color: #9FA3A9;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    max-width: 400px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+}
+
+.result-numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* font-size: 4.5rem; */
+    /* font-weight: 700; */
+    /* color: #C684FF; */
+    margin-bottom: 60px;
+    min-height: 120px;
+}
+
+.number-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+.bg-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #D586E0 0%, #91A1FA 98.93%);
+    border-radius: 20%;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    animation: popShape 1.5s ease-in-out forwards;
+}
+
+.num-text {
+    position: relative;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: transparent;
+    transform: scale(0);
+    z-index: 2;
+    animation: popText 1.5s ease-in-out forwards;
+}
+
+.again-button {
+    background-color: #24222E;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    max-width: 482px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.again-button:hover {
+    background-color: #3A3A45;
+}
+
+.again-button.show {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* --- KEYFRAMES (As regras da animação quadro a quadro) --- */
+
+/* Animação do fundo roxo: aparece girando, fica, depois some encolhendo */
+@keyframes popShape {
+    0% { opacity: 0; transform: scale(0) rotate(0deg); }
+    20% { opacity: 1; transform: scale(1) rotate(45deg); }
+    80% { opacity: 1; transform: scale(1) rotate(45deg); }
+    100% { opacity: 0; transform: scale(0) rotate(90deg); }
+}
+
+/* Animação do número: aparece preto (cor do fundo), depois fica roxo */
+@keyframes popText {
+    0% { color: transparent; transform: scale(0); }
+    20% { color: #0B0B0C; transform: scale(1); } /* Cor escura do body, parece "vazado" */
+    80% { color: #0B0B0C; transform: scale(1); }
+    100% { color: #C684FF; transform: scale(1); } /* Fica roxo no final */
+}
+
+/* Animação de entrada do botão final */
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
 }
